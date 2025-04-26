@@ -14,6 +14,6 @@ public class ArmController : MonoBehaviour {
         bool isWalking = moveInput > walkThreshold;
 
         animator.SetBool("IsWalking", isWalking);
-        
+        debug.log($"State:"{isWalking})
     }
 }
