@@ -1,8 +1,9 @@
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 
 public class inventory : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public Image component1;
     void Start()
     {
         
@@ -11,6 +12,5 @@ public class inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 }
