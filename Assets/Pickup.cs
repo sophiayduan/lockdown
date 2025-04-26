@@ -4,6 +4,7 @@ public class Pickup : MonoBehaviour
 {
     public Transform aimSphere;
     public LayerMask layerMask;
+    public int maxDistance;
    
     void Update()
     {
@@ -12,17 +13,15 @@ public class Pickup : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity,layerMask))
         {
-            Debug.DrawRay(screenCenter, hit.point, Color.blue,25f);
-            aimSphere.position = Vector3.Lerp(aimSphere.position, hit.point, 25f * Time.deltaTime );
+            aimSphere.position = Vector3.Lerp(aimSphere.position, hit.point, maxDistance * Time.deltaTime );
         }
         else 
         {
-            Vector3 destination = ray.origin + ray.direction * 25;  
-            aimSphere.position = Vector3.Lerp(aimSphere.position, destination, 25f * Time.deltaTime);
+            Vector3 destination = ray.origin + ray.direction *maxDistance;  
+            aimSphere.position = Vector3.Lerp(aimSphere.position, destination, maxDistance* Time.deltaTime);
 
         }
 
     }
-
 
 }

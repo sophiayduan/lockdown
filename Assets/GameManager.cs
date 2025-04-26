@@ -17,15 +17,15 @@ public class GameManager : MonoBehaviour
             else Time.timeScale = 1f;
         }
 
-    //     foreach(Transform child in components.transform){
-    //         // GameObject childObject = child.gameObject;
-    //         if(child.gameObject.activeSelf == false) count += 1;
+        foreach(Transform child in components.transform){
+            // GameObject childObject = child.gameObject;
+            if(child.gameObject.activeSelf == false) count += 1;
 
-    //         else break;
+            else break;
 
-    //     }
-    //     if(count >= componentAmount){
-    //         winPanel.SetActive(true);
-    //     }
+        }
+        if(count >= componentAmount){
+            winPanel.SetActive(true);
+        }
     }
 }

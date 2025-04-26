@@ -2025,6 +2025,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 192
+  maxDistance: 10
 --- !u!1 &1919687080
 GameObject:
   m_ObjectHideFlags: 0
@@ -2420,6 +2421,7 @@ GameObject:
   - component: {fileID: 2028822163}
   - component: {fileID: 2028822162}
   - component: {fileID: 2028822167}
+  - component: {fileID: 2028822168}
   m_Layer: 7
   m_Name: Cube
   m_TagString: component
@@ -2439,8 +2441,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d56e514364094b4da02efa3b7d5f8c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inActive: {fileID: 0}
-  active: {fileID: 0}
 --- !u!65 &2028822163
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2557,6 +2557,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2028822168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028822161}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.79622644, g: 0.18478456, b: 0.18478456, a: 1}
+  outlineWidth: 8.71
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
