@@ -1,4 +1,6 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -6,6 +8,7 @@ public class GameManager : MonoBehaviour
     public GameObject components;
     public int componentAmount;
     [SerializeField] GameObject winPanel;
+    public bool hasWon = false;
     private int count = 0;
 
 
@@ -24,8 +27,18 @@ public class GameManager : MonoBehaviour
             else break;
 
         }
-        if(count >= componentAmount){
+        if(!hasWon && count >= componentAmount){
             winPanel.SetActive(true);
+            Time.timeScale = 0;
+            hasWon = true;
+
+        }
+
+        if(hasWon && Input.GetKeyDown(KeyCode.Space)){
+            winPanel.SetActive(false);
+            Time.timeScale = 1;
         }
     }
+
+    
 }
