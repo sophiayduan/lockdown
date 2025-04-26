@@ -3,12 +3,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject pausePanel;
-    public State state;
     public GameObject components;
+    public int componentAmount;
+    [SerializeField] GameObject winPanel;
+    private int count = 0;
 
-
-    // public MenuManager menuManager;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Update()
     {
@@ -19,11 +18,14 @@ public class GameManager : MonoBehaviour
         }
 
         foreach(Transform child in components.transform){
-            GameObject childObject = child.gameObject;
-            if(child.gameObject.activeSelf == true){
-                break;
-            }
+            // GameObject childObject = child.gameObject;
+            if(child.gameObject.activeSelf == false) count += 1;
 
+            else break;
+
+        }
+        if(count >= componentAmount){
+            winPanel.SetActive(true);
         }
     }
 }

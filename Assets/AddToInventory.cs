@@ -1,31 +1,16 @@
-// using System.Linq;
-// using Unity.VisualScripting;
-// using UnityEngine;
 
-// public class AddToInventory : MonoBehaviour
-// {
-//     public GameObject [] collected = new GameObject[10];
-//     public GameObject displayPanel;
-    
-//     public static GameObject setGrab;
-//     void Start()
-//     {
-        
-//     }
+using UnityEngine;
 
-//     // Update is called once per frame
-//     void Update()
-//     {
-        
-//     }
+public class AddToInventory : MonoBehaviour
+{
 
-//     void OnTriggerEnter(Collider other)
-//     {
-//         if(other.tag == "component" && Input.GetKeyDown(KeyCode.F)){
-//             other.gameObject.SetActive(false);
-            
-//         }
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "component" && Input.GetKeyDown(KeyCode.F)){
+            Debug.Log("GOT IT");
+            other.gameObject.SetActive(false);
+        }
 
 
-//     }
-// }
+    }
+}
