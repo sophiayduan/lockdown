@@ -7,10 +7,19 @@ public class State : MonoBehaviour
 
     void Update()
     {
-        if(!gameObject){
-            inActive.SetActive(false);
-            active.SetActive(true);
+        // if(!gameObject){
+        //     Debug.Log("Its inactivve!");
+        //     // inActive.SetActive(false);
+        //     // active.SetActive(true);
 
-        }
+        // }
+    }
+    void OnTriggerEnter(Collider other)
+    {
+    if(other.tag == "aimSphere" && Input.GetKeyDown(KeyCode.F)){
+        Debug.Log("GOT IT");
+        gameObject.SetActive(false);
+    }
+
     }
 }
