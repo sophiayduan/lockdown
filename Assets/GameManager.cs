@@ -11,7 +11,10 @@ public class GameManager : MonoBehaviour
     public bool hasWon = false;
     private int count = 0;
 
-
+    void Start()
+    {
+        winPanel.SetActive(false);
+    }
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape)){
@@ -19,12 +22,12 @@ public class GameManager : MonoBehaviour
             if(pausePanel) Time.timeScale = 0f; 
             else Time.timeScale = 1f;
         }
+        count = 0;
 
         foreach(Transform child in components.transform){
             // GameObject childObject = child.gameObject;
             if(child.gameObject.activeSelf == false) count += 1;
 
-            else break;
 
         }
         if(!hasWon && count >= componentAmount){
