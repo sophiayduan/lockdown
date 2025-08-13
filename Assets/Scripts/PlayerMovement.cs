@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
  
     public float speed = 12f;
+    public float sprintSpeed = 15f;
     public float gravity = -9.81f * 2;
     public float jumpHeight = 3f;
  
@@ -36,7 +38,12 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
  
         controller.Move(move * speed * Time.deltaTime);
- 
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            controller.Move(move * sprintSpeed * Time.deltaTime);
+
+        }
+
         //check if the player is on the ground so he can jump
         if (Input.GetButtonDown("Jump") && isGrounded)
         {

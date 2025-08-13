@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape)){
+        if(Input.GetKeyDown(KeyCode.Escape) && !hasWon){
             pausePanel.SetActive(!pausePanel.activeSelf);
             if(pausePanel) Time.timeScale = 0f; 
             else Time.timeScale = 1f;
@@ -37,10 +37,10 @@ public class GameManager : MonoBehaviour
 
         }
 
-        if(hasWon && Input.GetKeyDown(KeyCode.Space)){
-            winPanel.SetActive(false);
-            Time.timeScale = 1;
-        }
+        // if(hasWon && Input.GetKeyDown(KeyCode.Space)){
+        //     winPanel.SetActive(false);
+        //     Time.timeScale = 1;
+        // }
     }
 
     
